@@ -16,7 +16,7 @@
     ?>
     <nav class="navbar">
         <a class="navtext" href="index.php">Home</a>
-        <a class="navtext" href="php">alle Films</a>
+        <a class="navtext" href="php">Alle films</a>
 
         <?php if (!isset($_SESSION['gebruikersnaam'])) { ?>
             
