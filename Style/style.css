@@ -5,7 +5,7 @@ body {
   }
   
   .navbar {
-    background-color: teal;
+    background-color: rgb(173, 0, 58);
     height: 10vh;
     display: flex;
     align-items: center;
@@ -16,23 +16,74 @@ body {
   }
   
   .navtext {
-    background-color: coral;
+    background-color: rgb(255, 0, 0);
     height: 5vh;
     width: auto;
     display: flex;
     align-items: center;
-    border: solid black;
+    border: solid rgb(255, 255, 255);
     border-radius: 1vh;
     block-size: 5vh;
     padding: 1vh;
+    color: white;
   }
   
   a:hover {
-    background-color: rgb(235, 0, 0);
     transition: all 0.70s ease-in-out;
     transform: translateY(-5px);
   }
   
   a:visited {
-    color: rgb(255, 0, 191);
+    color: rgb(0, 255, 251);
   }
+
+/*footer*/
+
+  Footer {
+    background-color: rgb(173, 0, 58);
+    color: rgb(255, 255, 255);
+    padding: 20px 0;
+    box-sizing: border-box; 
+    width: 100%;
+    position: relative; 
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .icons a {
+    margin-right: 20px;
+    border: 2px solid white; 
+    border-radius: 10px; 
+    background-color: rgb(255, 0, 0); 
+    padding: 10px; 
+    display: inline-block; 
+    color: white; 
+    text-decoration: none; 
+  }
+  
+  .icons {
+    font-size: 25px;
+  }
+  
+  footer p {
+    margin: 0;
+    border: 2px solid rgb(255, 255, 255);  
+    border-radius: 10px; 
+    background-color: rgb(255, 0, 0);
+    padding: 10px; 
+  }
+  
+  footer .socials a {
+    border: 2px solid rgb(8, 8, 8);  
+    border-radius: 10px; 
+    padding: 5px; 
+    display: inline-block; 
+  }
+  
+
