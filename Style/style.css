@@ -1,0 +1,38 @@
+
+body {
+    margin: 0 auto;
+    background-color:   #ffffff;
+  }
+  
+  .navbar {
+    background-color: teal;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20vh;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .navtext {
+    background-color: coral;
+    height: 5vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    border: solid black;
+    border-radius: 1vh;
+    block-size: 5vh;
+    padding: 1vh;
+  }
+  
+  a:hover {
+    background-color: rgb(235, 0, 0);
+    transition: all 0.70s ease-in-out;
+    transform: translateY(-5px);
+  }
+  
+  a:visited {
+    color: rgb(255, 0, 191);
+  }
