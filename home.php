@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style/cinemastyle.css">
 </head>
 <body>
+<?php
+require "header.php"
+?>
     <div class="content">
         <h1>Welkom bij Bioscoop Deluxe</h1>
         <p>Kies je film en geniet van de show!</p>
@@ -63,4 +66,7 @@
         </div>
     </div>
 </body>
+<?php
+require "Footer.php"
+?>
 </html>
