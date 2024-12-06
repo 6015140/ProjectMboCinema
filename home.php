@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bioscoop</title>
+    <title>MBOcinema - De beste films en tickets online</title>
+    <meta name="description" content="Welkom bij MBOcinema!">
+    <meta name="keywords" content="bioscoop, Home, films, tickets, MBOcinema, online tickets, nieuwste films, filmervaring">
+    <meta name="author" content="Kevin van Vliet">
     <link rel="stylesheet" href="style/cinemastyle.css">
 </head>
 <body>
@@ -11,10 +14,9 @@
 require "header.php"
 ?>
     <div class="content">
-        <h1>Welkom bij Bioscoop Deluxe</h1>
-        <p>Kies je film en geniet van de show!</p>
+        <h1>Welkom bij MBOcinema!</h1>
+        <p>Kies je film</p>
 
-        <!-- Zoekbalk -->
         <form method="GET" class="search-form">
             <input type="text" name="search" placeholder="Zoek een film..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
             <button type="submit">Zoeken</button>
@@ -22,7 +24,7 @@ require "header.php"
 
         <div class="movie-list">
             <?php
-            // Array van films
+
             $films = [
                 [
                     "titel" => "Avontuur in de Ruimte",
@@ -41,13 +43,13 @@ require "header.php"
                 ]
             ];
 
-            // Zoekfunctionaliteit
+            
             $zoekterm = isset($_GET['search']) ? strtolower(trim($_GET['search'])) : '';
             $gefilterde_films = array_filter($films, function ($film) use ($zoekterm) {
                 return $zoekterm === '' || strpos(strtolower($film['titel']), $zoekterm) !== false;
             });
 
-            // Dynamisch gefilterde films weergeven
+            
             if (empty($gefilterde_films)) {
                 echo "<p>Geen films gevonden met de term '<strong>" . htmlspecialchars($zoekterm) . "</strong>'.</p>";
             } else {

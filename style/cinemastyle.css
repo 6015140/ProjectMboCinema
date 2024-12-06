@@ -1,21 +1,33 @@
-/* Algemene styling */
+/* Algemene stijl */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
+
+    display: flex;
+    flex-direction: column;
 }
 
+/* Content vult resterende ruimte */
 .content {
+    flex: 1;
     text-align: center;
     padding: 20px;
 }
 
+/* Kopstijl */
 h1 {
     color: #d23669;
 }
 
+/* Movie list */
 .movie-list {
     display: flex;
     justify-content: center;
@@ -24,6 +36,7 @@ h1 {
     margin-top: 20px;
 }
 
+/* Movie card stijl */
 .movie {
     background: #fff;
     border: 1px solid #ddd;
@@ -50,6 +63,7 @@ h1 {
     margin: 10px 0;
 }
 
+/* Button stijl */
 button {
     background-color: #d23669;
     color: #fff;
@@ -63,4 +77,58 @@ button {
 
 button:hover {
     background-color: #b12258;
+}
+
+/* Footer stijl */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsieve stijl met media queries */
+@media (max-width: 768px) {
+    /* Pas de breedte van de filmkaarten aan voor kleinere schermen */
+    .movie {
+        width: 90%;
+    }
+
+    /* Zorg dat de zoekbalk en inhoud goed uitgelijnd blijven */
+    .search-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-form input {
+        width: 80%;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .search-form button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Nog compactere lay-out voor zeer kleine schermen */
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .movie h2 {
+        font-size: 1.2em;
+    }
+
+    .movie p {
+        font-size: 0.8em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
 }
