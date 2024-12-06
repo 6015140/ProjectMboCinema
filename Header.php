@@ -10,28 +10,28 @@
     <link rel="stylesheet" href="Style/style.css">
 </head>
 <header>
-    <?php
-    session_start();
-    require_once('Script/Functions.php');
-    ?>
-    <nav class="navbar">
-        <a class="navtext" href="Home.php">Home</a>
-        <a class="navtext" href="Alle-films.php">Alle films</a>
-        <a class="navtext" href="abbonomenten.php">Abonnementen</a>
+<?php
+session_start(); // Zorg ervoor dat de sessie gestart is
+require_once('Script/Functions.php');
+?>
 
-        <?php if (!isset($_SESSION['gebruikersnaam'])) { ?>
-            
-            <a class="navtext" href="inlog.php">Inloggen/ Registeren</a>
-        <?php } else { ?>
-            <a class="navtext" href="profiel.php">Profiel</a>
-            <a class="navtext" href="logout.php">Logout</a>
-        
+<nav class="navbar">
+    <a class="navtext" href="Home.php">Home</a>
+    <a class="navtext" href="Alle-films.php">Alle films</a>
+    <a class="navtext" href="abbonomenten.php">Abonnementen</a>
+
+    <?php if (!isset($_SESSION['gebruikersnaam'])) { ?>
+        <a class="navtext" href="inlog.php">Inloggen/ Registeren</a>
+    <?php } else { ?>
+        <a class="navtext" href="profiel.php">Profiel</a>
+        <a class="navtext" href="logout.php">Logout</a>
+
         <?php
-            $gebruikersnaam = htmlspecialchars($_SESSION['gebruikersnaam']);
-            echo "<span class='navtext'>Welkom, $gebruikersnaam</span>";
-            ?>
-        <?php } ?>
-    </nav>
+        $gebruikersnaam = htmlspecialchars($_SESSION['gebruikersnaam']);
+        echo "<span class='navtext'>Welkom, $gebruikersnaam</span>";
+        ?>
+    <?php } ?>
+</nav>
 </header>
 
 
