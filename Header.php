@@ -17,12 +17,12 @@
     <nav class="navbar">
         <a class="navtext" href="Home.php">Home</a>
         <a class="navtext" href="Alle-films.php">Alle films</a>
+        <a class="navtext" href="abbonomenten.php">Abonnementen</a>
 
         <?php if (!isset($_SESSION['gebruikersnaam'])) { ?>
             
             <a class="navtext" href="inlog.php">Inloggen/ Registeren</a>
         <?php } else { ?>
-            <a class="navtext" href="abonnementen.php">Abonnementen</a>
             <a class="navtext" href="profiel.php">Profiel</a>
             <a class="navtext" href="logout.php">Logout</a>
         

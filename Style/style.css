@@ -15,7 +15,7 @@ body {
 }
 
 .navtext {
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(173, 0, 58);
   height: 5vh;
   width: auto;
   display: flex;
@@ -151,7 +151,7 @@ h1 {
 
 .button {
   padding: 10px 20px;
-  background-color: #28a745;
+  background-color: #900027;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -186,5 +186,76 @@ h1 {
 
   footer p {
     margin-top: 10px;
+  }
+}
+
+.abonnementen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.abonnement {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.abonnement img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.abonnement h2 {
+  font-size: 1.4em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.abonnement p {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.abonnement button {
+  background-color: #c70039;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.abonnement button:hover {
+  background-color: #900027;
+}
+
+@media (min-width: 600px) {
+  .abonnementen {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .abonnement {
+    width: 45%;
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .abonnement {
+    width: 30%;
   }
 }

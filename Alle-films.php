@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBOcinema - Films</title>
     <link rel="stylesheet" href="Style/style.css">
+    <meta name="description" content="Bekijk de nieuwste films in de bioscoop bij MBOcinema. Van avonturenfilms tot thrillers, er is voor ieder wat wils.">
+    <meta name="keywords" content="films, bioscoop, MBOcinema, avontuur, thriller, drama, actie, familie, horror">
+    <meta name="author" content="MBOcinema">
 </head>
 <?php
 require "header.php"
