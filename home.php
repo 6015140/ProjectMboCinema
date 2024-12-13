@@ -14,7 +14,7 @@
 require "header.php"
 ?>
     <div class="content">
-        <h1>Welkom bij MBOcinema!</h1>
+        <h1>MBOcinema</h1>
         <p>Kies je film</p>
 
         <form method="GET" class="search-form">
