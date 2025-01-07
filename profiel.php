@@ -1,35 +1,9 @@
 <?php
-// Database verbinding
-try {
-    $conn = new PDO('mysql:host=localhost;dbname=phplesjaar2', 'root', '');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Verbinding mislukt: " . $e->getMessage();
-    exit;
-}
+include 'header.php';
 
-// Start de sessie
-session_start();
-
-// Controleer of de gebruiker is ingelogd
-if (!isset($_SESSION['id'])) {
-    header('Location: login.php'); // Verwijs naar loginpagina als niet ingelogd
-    exit;
-}
-
-// Haal de gebruikersgegevens op
-$user_id = $_SESSION['id'];
-
-$query = "SELECT username, email, balance FROM users WHERE id = :id";
-$stmt = $conn->prepare($query);
-$stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
-$stmt->execute();
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$user) {
-    echo "Gebruiker niet gevonden.";
-    exit;
-}
+// Voorbeeld van gebruikersinformatie, dit zou normaal uit een database komen
+$_SESSION['gebruikers'] = 'Gebruiker123';
+$_SESSION['account_balance'] = 100.50;
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +11,12 @@ if (!$user) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profielpagina</title>
+    <title>Profiel Pagina</title>
 </head>
 <body>
-    <h1>Welkom, <?php echo htmlspecialchars($user['username']); ?>!</h1>
-    <p>Email: <?php echo htmlspecialchars($user['email']); ?></p>
-    <p>Saldo: €<?php echo number_format($user['balance'], 2); ?></p>
-    <a href="logout.php">Uitloggen</a>
+    <h1>Welkom op je profielpagina</h1>
+    <p>Hier kun je je profielinformatie bekijken en bewerken.</p>
+    <p>Gebruikersnaam: <?php echo $_SESSION['gebruikers']; ?></p>
+    <p>Balans: €<?php echo number_format($_SESSION['account_balance'], 2); ?></p>
 </body>
 </html>

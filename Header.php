@@ -24,6 +24,7 @@ require_once('Script/Functions.php');
         <a class="navtext" href="inlog.php">Inloggen/ Registeren</a>
     <?php } else { ?>
         <a class="navtext" href="profiel.php">Profiel</a>
+        <a class="navtext" href="addFilm.php">add Film toevoegen</a>
         <a class="navtext" href="logout.php">Logout</a>
 
         <?php
