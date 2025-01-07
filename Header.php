@@ -11,7 +11,7 @@
 </head>
 <header>
 <?php
-session_start(); // Zorg ervoor dat de sessie gestart is
+session_start();
 require_once('Script/Functions.php');
 ?>
 
