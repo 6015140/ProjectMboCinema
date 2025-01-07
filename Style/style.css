@@ -25,6 +25,7 @@ body {
   block-size: 5vh;
   padding: 1vh;
   color: white;
+  font-size: large;
 }
 
 a:hover {
