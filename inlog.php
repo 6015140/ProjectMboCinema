@@ -1,5 +1,6 @@
 <?php
 require_once 'Header.php'; 
+require_once 'Database.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,12 +29,7 @@ require_once 'Header.php';
         $gebruikers = htmlspecialchars($_POST['gebruikers']); 
         $password = $_POST['password'];
 
-        try {
-           
-            $conn = new PDO('mysql:host=localhost;dbname=phplesjaar2', 'root', '');
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            
+        try {            
             $stmt = $conn->prepare('SELECT * FROM gebruikers WHERE gebruikersnaam = :gebruikers');
             $stmt->bindParam(':gebruikers', $gebruikers);
             $stmt->execute();
