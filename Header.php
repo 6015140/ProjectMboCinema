@@ -12,7 +12,6 @@
 <header>
 <?php
 session_start();
-require_once('Script/Functions.php');
 ?>
 
 <nav class="navbar">
