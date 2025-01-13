@@ -22,7 +22,7 @@ $films = $filmClass->getAllFilms();
             <li>
                 <h2><?php echo htmlspecialchars($film['titel']); ?></h2>
                 <p>Genre: <?php echo htmlspecialchars($film['genre']); ?></p>
-                <p>Releasejaar: <?php echo htmlspecialchars($film['releasejaar']); ?></p>
+                <p>releasejaar: <?php echo htmlspecialchars($film['release_datum']); ?></p>
             </li>
         <?php endforeach; ?>
     </ul>
