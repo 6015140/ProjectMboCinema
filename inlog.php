@@ -1,6 +1,5 @@
 <?php
 require_once 'Header.php'; 
-require_once 'Database.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,44 +23,12 @@ require_once 'Database.php';
         <input type="submit" name="login" value="Login">
     </form>
 
-    <?php
-    if(isset($_POST['submit'])){
-        require "Classes/login.php";
-        $user = new User();
-        $user->register($_POST);
-    }
-    ?>
 
     <?php
     if (isset($_POST['login'])) {
-        $gebruikers = htmlspecialchars($_POST['gebruikers']); 
-        $password = $_POST['password'];
-
-        try {            
-            $stmt = $conn->prepare('SELECT * FROM gebruikers WHERE gebruikersnaam = :gebruikers');
-            $stmt->bindParam(':gebruikers', $gebruikers);
-            $stmt->execute();
-
-           
-            if ($stmt->rowCount() > 0) {
-                
-                $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                
-                if (password_verify($password, $user['wachtwoord'])) {
-                   
-                    $_SESSION['gebruikersnaam'] = $gebruikers; 
-                    header('Location: Home.php'); 
-                    exit(); 
-                } else {
-                    echo "<p style='color: red;'>Onjuiste gebruikersnaam of wachtwoord.</p>";
-                }
-            } else {
-                echo "<p style='color: red;'>Onjuiste gebruikersnaam of wachtwoord.</p>";
-            }
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
+        require "Classes/User.php";
+        $user = new User();
+        $user->inloggen($_POST);
     }
     ?>
 

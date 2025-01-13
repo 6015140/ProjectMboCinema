@@ -42,4 +42,41 @@ public function register($user)
         }
     
 }
+
+public function inloggen($data)
+    {
+        $error = '';
+        $username = trim($data['gebruikers']);
+        $password = trim($data['password']);
+
+        if (empty($username) || empty($password)) {
+            $error = "Gebruikersnaam en wachtwoord zijn verplicht.";
+        } else {
+            $conn = $this->conn;	
+
+
+            $stmt = $conn->prepare("SELECT * FROM gebruikers WHERE gebruikersnaam = :gebruikersnaam");
+            $stmt->bindParam(':gebruikersnaam', $username, PDO::PARAM_STR);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                if (password_verify($password, $result['wachtwoord'])) {
+                    session_start();
+                    $_SESSION['user_id'] = $result['id'];
+                    $_SESSION['gebruikersnaam'] = $result['gebruikersnaam'];
+                    $_SESSION['rol'] = $result['rol'];
+
+                    header('Location: home.php');
+                    exit;
+                } else {
+                    $error = "Ongeldige gebruikersnaam of wachtwoord.";
+                }
+            } else {
+                $error = "Ongeldige gebruikersnaam of wachtwoord.";
+            }
+        }
+
+        return $error;
+    }
 }
