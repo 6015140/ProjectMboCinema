@@ -6,7 +6,6 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     
-    echo "Verbonden met database: " . $conn->query('SELECT DATABASE()')->fetchColumn();
 } catch(PDOException $e) {
     echo "Verbinding mislukt: " . $e->getMessage();
 }
