@@ -17,7 +17,7 @@ require_once('Script/Functions.php');
 
 <nav class="navbar">
     <a class="navtext" href="Home.php">Home</a>
-    <a class="navtext" href="Alle-films.php">Alle films</a>
+    <a class="navtext" href="films.php">Alle films</a>
     <a class="navtext" href="abbonomenten.php">Abonnementen</a>
 
     <?php if (!isset($_SESSION['gebruikersnaam'])) { ?>
