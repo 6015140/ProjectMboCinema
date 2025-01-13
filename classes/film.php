@@ -1,6 +1,6 @@
 <?php
 require "Database.php";
-class Film extends Database
+class Film extends Database 
 {
     
 
