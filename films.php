@@ -1,7 +1,7 @@
 <?php
 
 require 'classes/film.php';
-
+require 'header.php';
 
 $filmClass = new Film();
 
@@ -26,5 +26,8 @@ $films = $filmClass->getAllFilms();
             </li>
         <?php endforeach; ?>
     </ul>
+    <?php
+require "Footer.php"
+?>
 </body>
 </html>
