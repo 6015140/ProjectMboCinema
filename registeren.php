@@ -15,9 +15,10 @@
 
     <?php
     if(isset($_POST['submit'])){
-        register($_POST);
-      }
-      
+        require "Classes/User.php";
+        $user = new User();
+        $user->register($_POST);
+    }
     ?>
 
     <main>

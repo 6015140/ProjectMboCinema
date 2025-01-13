@@ -25,6 +25,14 @@ require_once 'Database.php';
     </form>
 
     <?php
+    if(isset($_POST['submit'])){
+        require "Classes/login.php";
+        $user = new User();
+        $user->register($_POST);
+    }
+    ?>
+
+    <?php
     if (isset($_POST['login'])) {
         $gebruikers = htmlspecialchars($_POST['gebruikers']); 
         $password = $_POST['password'];
