@@ -1,6 +1,5 @@
 <?php
 require_once 'Header.php'; 
-require_once 'Database.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +26,8 @@ require_once 'Database.php';
     <?php
     if(isset($_POST['submit'])){
         require "Classes/login.php";
-        $user = new User();
-        $user->register($_POST);
+        $login = new login();
+        $login->inloggen($_POST);
     }
     ?>
 
