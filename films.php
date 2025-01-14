@@ -21,8 +21,12 @@ $films = $filmClass->getAllFilms();
         <?php foreach ($films as $film): ?>
             <li>
                 <h2><?php echo htmlspecialchars($film['titel']); ?></h2>
+                <p><?php echo htmlspecialchars($film['omschrijving']); ?></p>
                 <p>Genre: <?php echo htmlspecialchars($film['genre']); ?></p>
+                <p>Duur: <?php echo htmlspecialchars($film['duur']); ?> minuten</p>
                 <p>releasejaar: <?php echo htmlspecialchars($film['release_datum']); ?></p>
+                <img src="<?php echo htmlspecialchars($film['poster_url']); ?>" alt="<?php echo htmlspecialchars($film['titel']); ?>">
+                <a href="editFilm.php">Bewerk</a><a href="deleteFilm.php?id=<?php echo $film['film_id'] ?>">Verwijder</a>
             </li>
         <?php endforeach; ?>
     </ul>
