@@ -44,7 +44,7 @@ class Film extends Database
 
     public function getFilmById($id)
     {
-        $sql = "SELECT * FROM films WHERE id = :id";
+        $sql = "SELECT * FROM films WHERE film_id = :id";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();

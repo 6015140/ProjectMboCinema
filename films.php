@@ -26,7 +26,7 @@ $films = $filmClass->getAllFilms();
                 <p>Duur: <?php echo htmlspecialchars($film['duur']); ?> minuten</p>
                 <p>releasejaar: <?php echo htmlspecialchars($film['release_datum']); ?></p>
                 <img src="<?php echo htmlspecialchars($film['poster_url']); ?>" alt="<?php echo htmlspecialchars($film['titel']); ?>">
-                <a href="editFilm.php">Bewerk</a><a href="deleteFilm.php?id=<?php echo $film['film_id'] ?>">Verwijder</a>
+                <a href="editFilm.php?id=<?php echo $film['film_id'] ?>">Bewerk</a><a href="deleteFilm.php?id=<?php echo $film['film_id'] ?>">Verwijder</a>
             </li>
         <?php endforeach; ?>
     </ul>
