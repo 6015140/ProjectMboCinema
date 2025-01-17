@@ -1,6 +1,6 @@
 <?php
 
-require 'classes/film.php';
+require './classes/film.php';
 require 'header.php';
 
 $filmClass = new Film();

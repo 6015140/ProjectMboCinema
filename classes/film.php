@@ -1,7 +1,7 @@
 <?php
-require "Database.php";
-class Film extends Database 
-{
+
+require_once "./classes/Database.php";
+class Film extends Database{
     
 
 

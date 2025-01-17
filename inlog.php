@@ -40,3 +40,24 @@ require_once 'Header.php';
     ?>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const opgeslagenGebruikersnaam = localStorage.getItem('gebruikersnaam');
+        if (opgeslagenGebruikersnaam) {
+            document.getElementById('gebruikers').value = opgeslagenGebruikersnaam;
+        }
+    });
+
+    document.getElementById('gebruikers').addEventListener('input', (event) => {
+        const gebruikersnaam = event.target.value;
+        localStorage.setItem('gebruikersnaam', gebruikersnaam);
+    });
+
+    document.querySelector('input[type="submit"]').addEventListener('click', () => {
+        const gebruikersnaam = document.getElementById('gebruikers').value;
+        if (gebruikersnaam) {
+            localStorage.setItem('gebruikersnaam', gebruikersnaam);
+        }
+    });
+</script>

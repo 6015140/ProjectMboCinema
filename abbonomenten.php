@@ -21,7 +21,7 @@ require "header.php"
     </div>
     <div class="abonnement">
         <img src="img/bioscoop.jpg" alt="Afbeelding Abonnement">
-        <h2>Volwassen abonnement</h2>
+        <h2>Kinder abonnement</h2>
         <p>Beleef al onze luxe.</p>
         <button>Koop nu</button>
     </div>

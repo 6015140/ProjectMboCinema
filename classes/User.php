@@ -1,12 +1,9 @@
 <?php
-require "Database.php";	
+require "./classes/Database.php";	
 class User extends Database{
 
 public function register($user)
 {
-   
-    
-
         $username = trim($user['gebruikersnaam']);
         $password = trim($user['wachtwoord']);
         $mail = trim($user['mail']);
