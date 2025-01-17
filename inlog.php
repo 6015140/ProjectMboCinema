@@ -7,11 +7,12 @@ require_once 'Header.php';
 <head>
     <meta charset="UTF-8">
     <title>Login Form</title>
+    <script src="functions.js"></script> 
 </head>
 <body>
     <h2>Login</h2>
 
-    <form action="" method="post">
+    <form action="" method="post" onsubmit="saveToLocalStorage()">
         <label for="gebruikers">Gebruikersnaam:</label>
         <input type="text" id="gebruikers" name="gebruikers" required>
         <br><br>
@@ -23,7 +24,6 @@ require_once 'Header.php';
         <input type="submit" name="login" value="Login">
     </form>
 
-
     <?php
     if (isset($_POST['login'])) {
         require "Classes/User.php";
@@ -32,7 +32,6 @@ require_once 'Header.php';
     }
     ?>
 
- 
     <p>Heb je geen account? <a href="registeren.php">Klik hier om je te registreren</a></p>
 
     <?php
